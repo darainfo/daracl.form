@@ -34,7 +34,7 @@ export const RULES = {
   VALIDATOR: "validator",
 } as const;
 
-export const FIELD_PREFIX = "dff"; // dara form field
+export const FIELD_PREFIX = "dff"; // daracl form field
 
 export const RENDER_TEMPLATE: any = {
   number: NumberRender,

@@ -21,7 +21,7 @@ module.exports = {
   entry: "./src/index.ts",
   output: {
     path: path.join(__dirname, "dist"),
-    filename: "dara.form.js",
+    filename: "daracl.form.js",
     library: "DaraForm",
     libraryTarget: "umd",
   },

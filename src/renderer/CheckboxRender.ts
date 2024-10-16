@@ -89,7 +89,7 @@ export default class CheckboxRender extends Render {
           </span>
       `);
     });
-    templates.push(`<i class="dara-icon help-icon"></i></div></div> ${Render.getDescriptionTemplate(field)}<div class="help-message"></div>`);
+    templates.push(`<i class="daracl-icon help-icon"></i></div></div> ${Render.getDescriptionTemplate(field)}<div class="help-message"></div>`);
 
     fieldContainerElement.innerHTML = templates.join("");
   }

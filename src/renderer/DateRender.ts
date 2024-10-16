@@ -3,9 +3,8 @@ import Render from "./Render";
 import { stringValidator } from "src/rule/stringValidator";
 import { resetRowElementStyleClass, invalidMessage } from "src/util/validUtils";
 import DaraForm from "src/DaraForm";
-import { DateTimePicker } from "dara-datetimepicker";
+import DateTimePicker from "@daracl/datetimepicker";
 
-import "dara-datetimepicker/dist/dara.datetimepicker.min.css";
 import * as utils from "src/util/utils";
 
 export default class DateRender extends Render {

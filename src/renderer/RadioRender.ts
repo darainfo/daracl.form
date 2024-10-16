@@ -91,7 +91,7 @@ export default class RadioRender extends Render {
                 `
       );
     });
-    templates.push(`<i class="dara-icon help-icon"></i></div></div>
+    templates.push(`<i class="daracl-icon help-icon"></i></div></div>
         ${Render.getDescriptionTemplate(field)}
      <div class="help-message"></div>
     `);

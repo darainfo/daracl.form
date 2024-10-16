@@ -10,7 +10,7 @@
       //"packages/b/src/index.ts",
     ],
     "out": "docs",
-    "name": "Dara Form",
+    "name": "Daracl Form",
     "excludePrivate": true,
     "readme": "DOC-README.md",
     "gitRevision": "main",

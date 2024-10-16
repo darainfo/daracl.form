@@ -8,7 +8,7 @@ module.exports = (env) => {
     mode: "development",
     devtool: "source-map",
     output: {
-      filename: "dara.form.js",
+      filename: "daracl.form.js",
     },
     plugins: [env.mode !== "deploy" ? new BundleAnalyzerPlugin() : ""],
     module: {

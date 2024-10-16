@@ -57,11 +57,11 @@ export default class FileRender extends Render {
           <input type="file" name="${field.$xssName}" class="form-field file" multiple />
           ${Lanauage.getMessage("fileButton")}
         </label>
-        <i class="dara-icon help-icon"></i>
+        <i class="daracl-icon help-icon"></i>
       </span>
     </div>
     ${Render.getDescriptionTemplate(field)}
-    <div class="dara-file-list"></div>
+    <div class="daracl-file-list"></div>
     <div class="help-message"></div>
     `;
 
@@ -97,7 +97,7 @@ export default class FileRender extends Render {
   }
 
   private setFileList(fileList: FileInfo[], initFlag?: boolean | undefined) {
-    const fileListElement = this.rowElement.querySelector(".dara-file-list");
+    const fileListElement = this.rowElement.querySelector(".daracl-file-list");
 
     if (fileListElement) {
       if (initFlag === true) {

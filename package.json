@@ -1,8 +1,8 @@
 {
-  "name": "dara-form",
+  "name": "@daracl/form",
   "version": "0.0.12",
   "sideEffects": false,
-  "description": "Dara form validation ",
+  "description": "Daracl form validation ",
   "author": {
     "name": "darainfo",
     "email": "darainfosys@gmail.com",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/darainfo/dara-form.git"
+    "url": "https://github.com/darainfo/daracl.form.git"
   },
   "publishConfig": {
     "access": "public",
@@ -18,10 +18,11 @@
   },
   "license": "MIT",
   "keywords": [
-    "daraValidation",
-    "dara-validation",
-    "daraForm",
-    "dara-form",
+    "@daracl/form",
+    "daraclValidation",
+    "daracl-validation",
+    "daraclForm",
+    "daracl-form",
     "form",
     "validation",
     "darainfo",
@@ -29,21 +30,23 @@
   ],
   "main": "src/index.ts",
   "types": "./dist/index.d.ts",
-  "exports": {
-    ".": "./dist/index.js",
-    "./dist/": "./dist/"
-  },
-  "homepage": "https://github.com/darainfo/dara-form",
+  "homepage": "https://github.com/darainfo/daracl.form",
   "bugs": {
-    "url": "https://github.com/darainfo/validation/issues",
+    "url": "https://github.com/darainfo/daracl.form/issues",
     "email": "darainfosys@gmail.com"
   },
+  "exports": {
+    ".": "./dist/index.js",
+    "./dist/": "./dist/",
+    "./style/": "./style/"
+  },
   "files": [
-    "dist"
+    "dist",
+    "style"
   ],
   "dependencies": {
-    "dara-datetimepicker": "^0.2.1",
-    "dara-toast": "^0.1.8",
+    "@daracl/datetimepicker": "^0.0.2",
+    "@daracl/toast": "^0.0.5",
     "init": "^0.1.2",
     "ink-docstrap": "^1.3.2",
     "preact": "^10.13.2",
@@ -120,7 +123,7 @@
   },
   "scripts": {
     "prepack": "yarn build",
-    "build": "yarn build:prod && yarn copy-dts && yarn build:tsc && yarn build:js && yarn copy-app",
+    "build": "yarn build:prod && yarn copy-dts && yarn build:tsc && yarn build:js",
     "build:tsc": "npx tsc --emitDeclarationOnly",
     "build:js": "node build.js",
     "build:dev": "webpack --config webpack.dev.js",
@@ -129,7 +132,6 @@
     "docs:gen": "typedoc --tsconfig tsconfig.doc.json",
     "test": "jest",
     "start": "webpack-dev-server --open --config ./webpack.dev.server.js",
-    "copy-dts": "copyfiles -u 1 \"src/**/*.d.ts\" dist",
-    "copy-app": "copyfiles -u 1 \"dist/dara.form.*\" D:/03.opensources/vpi-console/vpi-console-web/src/main/webapp/webstatic/js/dara/form"
+    "copy-dts": "copyfiles -u 1 \"src/**/*.d.ts\" dist"
   }
 }

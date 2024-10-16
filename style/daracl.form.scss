@@ -23,7 +23,7 @@ $sizes: 8.33333333%, 16.66666667%, 25%, 33.33333333%, 41.66666667%, 50%, 58.3333
   }
 }
 
-.dara-form {
+.daracl-form {
   --border-color: #dfe1e5;
   --color-danger: #d9534f;
   --background-danger: #d9534f;
@@ -45,8 +45,8 @@ $sizes: 8.33333333%, 16.66666667%, 25%, 33.33333333%, 41.66666667%, 50%, 58.3333
   --bg-grid-header: #f1f1f1;
 }
 
-body.dark .dara-form,
-.dara-form.dark {
+body.dark .daracl-form,
+.daracl-form.dark {
   --border-color: #41444c;
   --color-danger: #d9534f;
   --background-danger: #d9534f;
@@ -68,7 +68,7 @@ body.dark .dara-form,
   --bg-grid-header: #878787;
 }
 
-.dara-form {
+.daracl-form {
   padding: 0px;
   margin-top: 10px;
   color: var(--font-color);
@@ -343,7 +343,7 @@ body.dark .dara-form,
     }
   }
 
-  .dara-file-list {
+  .daracl-file-list {
     .file-icon {
       width: 20px;
       height: 20px;
@@ -515,7 +515,7 @@ body.dark .dara-form,
         background-position-x: calc(100% - 15px);
       }
 
-      &.dara-icon {
+      &.daracl-icon {
         display: none;
         position: absolute;
         z-index: 1;
@@ -618,7 +618,7 @@ body.dark .dara-form,
             background-position-x: calc(100% - 15px);
           }
 
-          &.dara-icon {
+          &.daracl-icon {
             display: none;
             position: absolute;
             z-index: 1;

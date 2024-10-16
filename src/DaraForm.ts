@@ -70,8 +70,10 @@ export default class DaraForm {
 
     if (formElement) {
       this.orginFormStyleClass = formElement.className;
-      formElement.classList.add("dara-form");
+      formElement.classList.add("daracl-form");
+
       this.selector = `df_${++DARA_FORM_SEQ}`;
+      formElement.setAttribute("name", this.selector);
       formElement.setAttribute(SEQ_ATTR_KEY, this.selector);
 
       if (this.options.style.width) {
@@ -88,6 +90,10 @@ export default class DaraForm {
     } else {
       throw new Error(`${formElement} form selector not found`);
     }
+  }
+
+  public static create(formElement: Element, options: FormOptions, message?: Message): DaraForm {
+    return new DaraForm(formElement, options, message);
   }
 
   public static setMessage(message: Message): void {

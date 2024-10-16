@@ -1,5 +1,7 @@
 import DaraForm from "./DaraForm";
 
-import "../style/dara.form.scss";
+import "../style/daracl.form.scss";
+
+import "@daracl/datetimepicker/style/daracl.datetimepicker.scss";
 
 export = DaraForm;
