@@ -58,7 +58,7 @@
     color: var(--bg-color);
   }
 </style>
-<script type="module">
+<script>
 
   const THEME_KEY = "form-theme";
   const theme = localStorage.getItem(THEME_KEY);
@@ -131,15 +131,41 @@
         name: "hiddenMode",
         renderType: "hidden",
         defaultValue: "asdf",
-      }
+      },
+      {
+        name: "uname",
+        label: "Text",
+        renderType: 'text',
+        template: '<div id="customElementID">111</div>',
+        required: true,
+        rule: {
+          minLength: 2,
+          maxLength: 100,
+        },
+        onChange: (arg) => {
+          console.log(arg);
+        },
+        renderer: {
+          mounted: () => {
+            console.log(document.getElementById('customElementID'))
+          }
+          , getValue() {
+            return '21';
+          }
+          , valid1(field, rowElement) {
+            const val = this.getValue();
+            return { name: field.name, message: 'custom type not valid' };
+          }
+        }
+      },
       , {
         name: "cmpCredId111",
-        label: "credentials",
-        renderType: "checkbox",
+        label: "Dropdown",
+        renderType: "dropdown",
         tooltip: "credentials 넣어주세요.",
         defaultValue: '222',
         required: true,
-        listItem1: {
+        listItem: {
           labelField: "credName",
           valueField: "credId",
           list: [{ credId: "11", credName: "credNam11" }, { credId: "22", credName: "credName" }, { credId: "33", credName: "credName33" }],
@@ -152,133 +178,11 @@
 
           return true;
         }
-      }
-      , {
-        renderType: 'group'
-        , orientation: "horizontal"
-        , children: [
-          {
-            renderType: 'group'
-            , orientation: "vertical"
-            , label: 'source'
-            , style: {
-              width: '5',
-              position: 'top-center'
-            }
-            , children: [
-              {
-                name: 'aaa',
-                label: 'asdf',
-                renderType: 'text',
-                style: {
-                  position: 'left-left'
-                }
-
-              }
-              , {
-                name: 'bbb',
-                label: 'asdf',
-                renderType: 'text',
-                style: {
-                  position: 'top-left'
-                }
-              }
-            ]
-
-          }
-          , {
-            name: 'test11122',
-            label: 'right-label',
-            renderType: 'text',
-            style: {
-              width: '7',
-              position: 'top-left'
-            }
-          }
-        ]
-      }
-
-      ,
-      {
-        name: "이름222222",
-        label: "이름222222",
-        renderType: 'text',
-        template: '<div id="customElementID">111</div>',
-        required: true,
-        rule: {
-          minLength: 2,
-          maxLength: 100,
-        }
-        , conditional: {
-          show: true,
-          custom: function () {
-
-            return false;
-          }
-        }
-        , renderer: {
-          mounted: () => {
-            console.log(document.getElementById('customElementID'))
-          }
-          , getValue() {
-            return '21';
-          }
-          , valid1(field, rowElement) {
-            const val = this.getValue();
-            return { name: field.name, message: 'custom type not valid' };
-          }
-        }
-      },
-      {
-        name: "sql",
-        label: "SQL",
-        renderType: 'custom',
-        template: '<div id="sqlCont" style="width:100%; height:200px;" class="border"></div>',
-        required: true,
-        onChange: (arg) => {
-          console.log(arg);
-        },
-        renderer: {
-          mounted: (field, element) => {
-            console.log(field, element.querySelector('#sqlCont'))
-
-          }
-          , getValue() {
-            return "custom field value";
-          }
-        }
       },
 
 
-
       {
-        name: "uname",
-        label: "이름222222",
-        renderType: 'custom',
-        template: '<div id="customElementID">111</div>',
-        required: true,
-        rule: {
-          minLength: 2,
-          maxLength: 100,
-        },
-        onChange: (arg) => {
-          console.log(arg);
-        },
-        renderer: {
-          mounted: () => {
-            console.log(document.getElementById('customElementID'))
-          }
-          , getValue() {
-            return '21';
-          }
-          , valid1(field, rowElement) {
-            const val = this.getValue();
-            return { name: field.name, message: 'custom type not valid' };
-          }
-        }
-      },
-      {
-        label: '비밀번호'
+        label: 'Password'
         , orientation: 'vertical'
         , conditional: {
           show: true,
@@ -318,8 +222,8 @@
       }
 
       , {
-        name: "age",
-        label: "생년월일",
+        name: "birth",
+        label: "Date",
         required: true,
         renderType: "date",
         customOptions: {
@@ -328,7 +232,7 @@
       },
       {
         name: "sex",
-        label: "성별",
+        label: "Radio",
         required: true,
         renderType: "radio",
         listItem: {
@@ -340,7 +244,7 @@
       },
       {
         name: "picture",
-        label: "사진",
+        label: "File",
         required: true,
         renderType: "file",
         listItem: {
@@ -349,21 +253,9 @@
         },
       },
 
+
       {
-        name: "cmpCredId",
-        label: "credentials",
-        renderType: "dropdown",
-        tooltip: "credentials 넣어주세요.",
-        required: true,
-        listItem: {
-          labelField: "credName",
-          valueField: "credId",
-          list: [{ label: "선택하세요." }, { credId: "credId", credName: "credName" }],
-        },
-        description: "awefawfeawefawef",
-      },
-      {
-        label: "checkbox",
+        label: "Checkbox",
 
         name: "checkbox11",
         required: true,
@@ -512,7 +404,7 @@
   var formObj = {
     load: () => {
       // formBuilder = loginForm;
-      formBuilder = new DaraForm(document.getElementById("formArea"), formInfo);
+      formBuilder = Daracl.form.create(document.getElementById("formArea"), formInfo);
     },
     addItem: () => {
       rowIdx += 1;

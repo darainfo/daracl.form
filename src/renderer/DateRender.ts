@@ -40,6 +40,8 @@ export default class DateRender extends Render {
       }
 
       this.setValue(dt);
+
+      this.valid();
     };
 
     this.dateObj = new DateTimePicker(this.element, this.field.customOptions, {} as any);
@@ -52,7 +54,7 @@ export default class DateRender extends Render {
 
     fieldContainerElement.innerHTML = `
     <div class="df-field">
-      <input type="text" name="${field.$xssName}" class="form-field text help-icon" autocomplete="off"/>
+      <input type="text" name="${field.$xssName}" class="form-field text help-icon" autocomplete="off" readonly/>
      </div>
      ${Render.getDescriptionTemplate(field)}
      <div class="help-message"></div>

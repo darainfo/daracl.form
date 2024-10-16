@@ -22,7 +22,11 @@ module.exports = {
   output: {
     path: path.join(__dirname, "dist"),
     filename: "daracl.form.js",
-    library: "DaraForm",
+    library: {
+      name: ["Daracl", "form"],
+      type: "var",
+    },
+
     libraryTarget: "umd",
   },
 
@@ -62,6 +66,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       inject: true,
+      scriptLoading: "blocking",
       template: "src/index.html",
     }),
     new webpack.BannerPlugin({

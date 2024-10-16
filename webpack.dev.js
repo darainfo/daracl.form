@@ -7,9 +7,6 @@ module.exports = (env) => {
   return merge(common, {
     mode: "development",
     devtool: "source-map",
-    output: {
-      filename: "daracl.form.js",
-    },
     plugins: [env.mode !== "deploy" ? new BundleAnalyzerPlugin() : ""],
     module: {
       rules: [

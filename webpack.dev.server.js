@@ -17,12 +17,6 @@ const PATHS = {
 module.exports = merge(common, {
   mode: "development",
   devtool: "inline-source-map",
-  output: {
-    path: path.join(__dirname, "./public"),
-    filename: "daracl.form.js",
-    library: "DaraForm",
-    libraryTarget: "umd",
-  },
   module: {
     rules: [
       {

@@ -582,7 +582,7 @@
   var formObj = {
     load: () => {
       // formBuilder = loginForm;
-      formBuilder = new DaraForm(document.getElementById("formArea"), formInfo);
+      formBuilder = Daracl.form.create(document.getElementById("formArea"), formInfo);
     },
     addItem: () => {
       rowIdx += 1;

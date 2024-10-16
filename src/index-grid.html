@@ -96,7 +96,7 @@
   }
   load();
 
-  const loginForm = new DaraForm(document.getElementById("loginForm"), {
+  const loginForm = Daracl.form.create(document.getElementById("loginForm"), {
     message: "This value is not valid",
     //mode: 'vertical',
     //autoFocus: false,
@@ -599,7 +599,7 @@
   var formObj = {
     load: () => {
       formBuilder = loginForm;
-      //formBuilder = new DaraForm("#formArea", formInfo);
+      //formBuilder = Daracl.form.create("#formArea", formInfo);
     },
     addItem: () => {
       rowIdx += 1;

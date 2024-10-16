@@ -15,6 +15,11 @@ JavaScript form creation library
 Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ |  
 
 
+<p>
+<img src="https://github.com/darainfo/daracl.form/blob/main/demo.gif?raw=true"/>
+</p>
+
+
 1. Install
 
 ```sh
