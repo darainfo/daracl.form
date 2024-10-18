@@ -4,6 +4,8 @@ const webpack = require("webpack");
 
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
+const { ModuleFederationPlugin } = require("webpack").container;
+
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const nodeExternals = require("webpack-node-externals");
@@ -29,6 +31,11 @@ module.exports = {
 
     libraryTarget: "umd",
   },
+  /*
+  externals: {
+    "@daracl/datetimepicker": "@daracl/datetimepicker",
+  },
+  */
 
   resolve: {
     extensions: [".js", ".jsx", ".ts", ".tsx"],
@@ -41,6 +48,17 @@ module.exports = {
   optimization: {
     providedExports: true,
     usedExports: true,
+
+    splitChunks: {
+      cacheGroups: {
+        default: false, // 기본 그룹 비활성화
+        vendor: {
+          test: /[\\/]node_modules[\\/]/, // node_modules에서 모듈을 찾음
+          filename: "daracl.vender.js", // 생성할 파일 이름
+          chunks: "all", // 모든 청크에서 분리
+        },
+      },
+    },
   },
   module: {
     rules: [
@@ -69,6 +87,16 @@ module.exports = {
       scriptLoading: "blocking",
       template: "src/index.html",
     }),
+    /*
+    new ModuleFederationPlugin({
+      name: "DateTimePicker", // 앱 이름
+      filename: "dara.datetimepicker.js",
+      exposes: {
+        "@daracl/datetimepicker": "@daracl/datetimepicker", // DaraForm을 내보내기
+      },
+    }),
+    */
+
     new webpack.BannerPlugin({
       banner: topBanner,
       raw: true,

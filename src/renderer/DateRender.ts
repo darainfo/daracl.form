@@ -36,7 +36,7 @@ export default class DateRender extends Render {
 
     this.field.customOptions.onSelect = (dt: any, e: Event) => {
       if (dateOnSelectEvent) {
-        dateOnSelectEvent.call(null, dt, e);
+        dateOnSelectEvent(dt, e);
       }
 
       this.setValue(dt);
@@ -45,7 +45,14 @@ export default class DateRender extends Render {
     };
 
     this.dateObj = new DateTimePicker(this.element, this.field.customOptions, {} as any);
+
+    //this.loadDate();
   }
+
+  // async loadDate() {
+  //   const DateTimePicker = await import("@daracl/datetimepicker");
+  //   this.dateObj = new DateTimePicker.default(this.element, this.field.customOptions, {} as any);
+  // }
 
   createField() {
     const field = this.field;

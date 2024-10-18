@@ -45,7 +45,16 @@ module.exports = merge(common, {
       {
         test: /\.(sa|sc|c)ss$/i,
         //exclude: /node_modules/u,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          {
+            loader: "sass-loader",
+            options: {
+              implementation: require("sass"), // Prefer `dart-sass`
+            },
+          },
+        ],
         //use: ["style-loader", "css-loader"],
       },
     ],
