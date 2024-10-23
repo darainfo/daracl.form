@@ -8,6 +8,7 @@ const baseConfig = {
   bundle: true,
   sourcemap: true,
   plugins: [sassPlugin()],
+  external: ["@daracl/datetimepicker", "@daracl/toast"],
 };
 
 Promise.all([

@@ -26,16 +26,19 @@ module.exports = {
     filename: "daracl.form.js",
     library: {
       name: ["Daracl", "form"],
-      type: "var",
+      type: "assign-properties",
     },
-
     libraryTarget: "umd",
   },
-  /*
+  // 모듈 제외
   externals: {
-    "@daracl/datetimepicker": "@daracl/datetimepicker",
+    "@daracl/datetimepicker": {
+      commonjs: "Daracl.dateTimePicker",
+      commonjs2: "Daracl.dateTimePicker",
+      amd: "Daracl.dateTimePicker",
+      root: ["Daracl", "dateTimePicker"],
+    },
   },
-  */
 
   resolve: {
     extensions: [".js", ".jsx", ".ts", ".tsx"],
@@ -48,17 +51,6 @@ module.exports = {
   optimization: {
     providedExports: true,
     usedExports: true,
-
-    splitChunks: {
-      cacheGroups: {
-        default: false, // 기본 그룹 비활성화
-        vendor: {
-          test: /[\\/]node_modules[\\/]/, // node_modules에서 모듈을 찾음
-          filename: "daracl.vender.js", // 생성할 파일 이름
-          chunks: "all", // 모든 청크에서 분리
-        },
-      },
-    },
   },
   module: {
     rules: [
@@ -87,15 +79,6 @@ module.exports = {
       scriptLoading: "blocking",
       template: "src/index.html",
     }),
-    /*
-    new ModuleFederationPlugin({
-      name: "DateTimePicker", // 앱 이름
-      filename: "dara.datetimepicker.js",
-      exposes: {
-        "@daracl/datetimepicker": "@daracl/datetimepicker", // DaraForm을 내보내기
-      },
-    }),
-    */
 
     new webpack.BannerPlugin({
       banner: topBanner,

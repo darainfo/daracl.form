@@ -32,6 +32,12 @@ module.exports = merge(common, {
     host: "0.0.0.0",
     port: 8889,
     watchFiles: ["src/**/*"],
+    open: {
+      app: {
+        name: "chrome",
+        arguments: ["--new-window", "--auto-open-devtools-for-tabs"],
+      },
+    },
   },
   plugins: [
     //new BundleAnalyzerPlugin()
