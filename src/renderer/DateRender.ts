@@ -45,14 +45,7 @@ export default class DateRender extends Render {
     };
 
     this.dateObj = new DateTimePicker(this.element, this.field.customOptions, {} as any);
-
-    //this.loadDate();
   }
-
-  // async loadDate() {
-  //   const DateTimePicker = await import("@daracl/datetimepicker");
-  //   this.dateObj = new DateTimePicker.default(this.element, this.field.customOptions, {} as any);
-  // }
 
   createField() {
     const field = this.field;
