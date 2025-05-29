@@ -6,7 +6,7 @@ import { resetRowElementStyleClass, invalidMessage } from "src/util/validUtils";
 import { dropdownChangeEvent } from "src/event/renderEvents";
 import DaraForm from "src/DaraForm";
 import * as utils from "src/util/utils";
-import Lanauage from "src/util/Lanauage";
+import Language from "src/util/Language";
 
 export default class DropdownRender extends Render {
   private element: HTMLSelectElement;
@@ -133,7 +133,7 @@ export default class DropdownRender extends Render {
     let template = "";
 
     if (field.customOptions?.disableDefaultOption !== true) {
-      template += `<option value="">${Lanauage.getMessage("selection")}</option>`;
+      template += `<option value="">${Language.getMessage("selection")}</option>`;
     }
     field.listItem?.list?.forEach((val) => {
       const attr = `${val.selected ? "selected" : ""} ${val.disabled ? "disabled" : ""}`;

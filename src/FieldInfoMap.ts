@@ -2,7 +2,7 @@ import { FIELD_PREFIX } from "src/constants";
 import { FormField } from "./types/FormField";
 import { ValidResult } from "./types/ValidResult";
 import { getRenderer } from "./util/renderFactory";
-import Lanauage from "./util/Lanauage";
+import Language from "./util/Language";
 import * as utils from "./util/utils";
 import DaraForm from "./DaraForm";
 
@@ -277,7 +277,7 @@ export default class FieldInfoMap {
     }
     fieldValid = fieldValid as ValidResult;
     if (utils.isUndefined(fieldValid.message)) {
-      fieldValid.message = Lanauage.validMessage(fieldInfo, fieldValid)[0];
+      fieldValid.message = Language.validMessage(fieldInfo, fieldValid)[0];
     }
 
     return fieldValid;

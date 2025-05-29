@@ -3,7 +3,7 @@ import { FormField } from "@t/FormField";
 import * as utils from "./util/utils";
 import { ValidResult } from "@t/ValidResult";
 import { Message } from "@t/Message";
-import Lanauage from "./util/Lanauage";
+import Language from "./util/Language";
 import { stringValidator } from "./rule/stringValidator";
 import { numberValidator } from "./rule/numberValidator";
 import { regexpValidator } from "./rule/regexpValidator";
@@ -66,7 +66,7 @@ export default class DaraForm {
   constructor(formElement: Element, options: FormOptions, message?: Message) {
     this.options = utils.merge({}, defaultOptions, options) as FormOptions;
 
-    Lanauage.set(message);
+    Language.set(message);
 
     if (formElement) {
       this.orginFormStyleClass = formElement.className;
@@ -97,7 +97,7 @@ export default class DaraForm {
   }
 
   public static setMessage(message: Message): void {
-    Lanauage.set(message);
+    Language.set(message);
   }
 
   private createForm(fields: FormField[]) {

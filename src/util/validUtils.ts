@@ -1,6 +1,6 @@
 import { FormField } from "@t/FormField";
 import { ValidResult } from "@t/ValidResult";
-import Lanauage from "./Lanauage";
+import Language from "./Language";
 
 export const invalidMessage = (field: FormField, rowElement: Element, validResult: ValidResult | boolean) => {
   if (validResult === true) {
@@ -25,7 +25,7 @@ export const invalidMessage = (field: FormField, rowElement: Element, validResul
   }
 
   if (validResult !== false) {
-    const message: string[] = Lanauage.validMessage(field, validResult);
+    const message: string[] = Language.validMessage(field, validResult);
 
     if (validResult.message) {
       message.push(validResult.message);

@@ -2,7 +2,7 @@ import { FileInfo, FormField } from "@t/FormField";
 import Render from "./Render";
 import { resetRowElementStyleClass, invalidMessage } from "src/util/validUtils";
 import { fileValidator } from "src/rule/fileValidator";
-import Lanauage from "src/util/Lanauage";
+import Language from "src/util/Language";
 import { customChangeEventCall } from "src/event/renderEvents";
 import DaraForm from "src/DaraForm";
 import * as utils from "src/util/utils";
@@ -55,7 +55,7 @@ export default class FileRender extends Render {
       <span class="file-wrapper">
         <label class="file-label">
           <input type="file" name="${field.$xssName}" class="form-field file" multiple />
-          ${Lanauage.getMessage("fileButton")}
+          ${Language.getMessage("fileButton")}
         </label>
         <i class="daracl-icon help-icon"></i>
       </span>
